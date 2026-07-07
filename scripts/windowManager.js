@@ -34,6 +34,43 @@ const WindowManager = {
     }
   },
 
+  async loadIllustration(illustration) {
+  if (!illustration) return "";
+
+  if (illustration.type === "ascii") {
+    try {
+      const response = await fetch(illustration.path, {
+        cache: "no-store"
+      });
+
+      if (!response.ok) {
+        throw new Error(`Could not fetch illustration.`);
+      }
+
+      const ascii = await response.text();
+
+      return `
+        <div class="illustration">
+          <pre>${ascii}</pre>
+        </div>
+      `;
+    } catch (error) {
+      console.warn(error);
+      return "";
+    }
+  }
+
+  if (illustration.type === "image") {
+    return `
+      <div class="illustration">
+        <img src="${illustration.path}" alt="">
+      </div>
+    `;
+  }
+
+  return "";
+},
+
   async openDocument(fileNode) {
     let metadata = {
       title: fileNode.title,
@@ -58,8 +95,10 @@ const WindowManager = {
       }
     }
 
-    const content = await this.loadDocx(metadata.docxPath);
-
+   const content = await this.loadDocx(metadata.docxPath);
+    const illustration = await this.loadIllustration(
+     metadata.illustration
+     );
     if (metadata.themePath) {
       this.loadTheme(metadata.themePath);
     }
@@ -79,11 +118,14 @@ const WindowManager = {
       </header>
 
       <section class="window-body">
-        <h1>${metadata.title}</h1>
-        <div class="author">${metadata.author || ""}</div>
-        ${content}
+       <h1>${metadata.title}</h1>
+      <div class="author">
+      ${metadata.author || ""}
+      </div>
+      ${illustration}
+      ${content}
       </section>
-    `;
+     `;
 
     this.attachWindowControls(win);
     this.layer.appendChild(win);
@@ -128,6 +170,7 @@ const WindowManager = {
 
     const firstTab = metadata.tabs[0];
     const firstContent = await this.loadDocx(firstTab.docxPath);
+    const illustration = await this.loadIllustration(metadata.illustration);
 
     const win = document.createElement("article");
     win.className = "thdate-window collection-window";

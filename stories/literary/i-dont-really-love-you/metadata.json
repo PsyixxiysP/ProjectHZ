@@ -4,5 +4,9 @@
   "genre": "literary",
   "type": "short story",
   "docxPath": "stories/literary/i-dont-really-love-you/i-dont-really-love-you.docx",
-  "themePath": "stories/literary/i-dont-really-love-you/theme.css"
+  "themePath": "stories/literary/i-dont-really-love-you/theme.css",
+  "illustration": {
+    "type": "ascii",
+    "path": "stories/literary/i-dont-really-love-you/ascii.txt"
+  }
 }
