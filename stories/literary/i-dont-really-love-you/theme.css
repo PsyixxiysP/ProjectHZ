@@ -1,9 +1,51 @@
 .thdate-window[data-story="i-dont-really-love-you"] {
-  background: #260708;
+    background: #15100E;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] .window-bar {
+    background: #2B1C18;
+    color: #D8C6B7;
+    border-bottom: 2px solid #641111;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] .window-controls button {
+    background: #4A231D;
+    color: #D8C6B7;
+    border: 1px solid #641111;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] .window-controls button:hover {
+    background: #641111;
+    color: #F3E7DC;
 }
 
 .thdate-window[data-story="i-dont-really-love-you"] .window-body {
-  background: #f4ecd8;
-  color: #1d1712;
-  font-family: Georgia, serif;
+    background: #211815;
+    color: #D8C6B7;
+    font-family: Georgia, serif;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] h1 {
+    color: #A11F1F;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] .author {
+    color: #8F7568;
+    margin-bottom: 2.5rem;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] p {
+    color: #D8C6B7;
+    line-height: 1.75;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] .illustration pre {
+    color: #A11F1F;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] ::selection {
+    background: #641111;
+    color: #F3E7DC;
 }

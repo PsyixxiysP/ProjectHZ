@@ -115,7 +115,9 @@
 
 .thdate-window[data-collection="haiku-collection-001"] p {
 
-    line-height: 1.75;
+   color: #7a2630;  
+  
+  line-height: 1.75;
 
     margin-bottom: 2rem;
 }
