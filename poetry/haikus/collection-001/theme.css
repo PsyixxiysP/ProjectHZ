@@ -35,14 +35,6 @@
   white-space: nowrap;
 }
 
-.collection-tabs button:nth-child(2n) {
-  background: #e0c995;
-}
-
-.collection-tabs button:nth-child(3n) {
-  background: #cfb174;
-}
-
 .collection-tabs button.active {
   top: 0;
   background: #f4ecd8;
