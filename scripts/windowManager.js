@@ -130,111 +130,114 @@ const WindowManager = {
   this.layer.appendChild(win);
 },
 
-  async openCollection(fileNode) {
-    let metadata = {
-      title: fileNode.title,
-      author: fileNode.author || "",
-      themePath: "",
-      tabs: [],
-    };
+ async openCollection(fileNode) {
+  let metadata = {
+    title: fileNode.title,
+    author: fileNode.author || "",
+    themePath: "",
+    tabs: [],
+  };
 
-    if (fileNode.metadataPath) {
-      try {
-        const response = await fetch(fileNode.metadataPath, {
-          cache: "no-store",
-        });
-
-        if (!response.ok) {
-          throw new Error(`Could not fetch metadata: ${response.status}`);
-        }
-
-        metadata = await response.json();
-      } catch (error) {
-        console.warn("Could not load collection metadata:", error);
-      }
-    }
-
-    if (metadata.themePath) {
-      this.loadTheme(metadata.themePath);
-    }
-
-    if (!metadata.tabs || !metadata.tabs.length) {
-      metadata.tabs = [
-        {
-          title: "Empty Collection",
-          docxPath: "",
-        },
-      ];
-    }
-
-    const firstTab = metadata.tabs[0];
-    const firstContent = await this.loadDocx(firstTab.docxPath);
-    const illustration = await this.loadIllustration(metadata.illustration);
-
-    const win = document.createElement("article");
-    win.className = "thdate-window collection-window";
-    win.dataset.collection = fileNode.collectionId || "";
-
-    win.innerHTML = `
-      <header class="window-bar">
-        <span>${metadata.title}</span>
-
-        <nav class="window-controls">
-          <button type="button" data-action="fullscreen">□</button>
-          <button type="button" data-action="close">✕</button>
-        </nav>
-      </header>
-
-      <section class="collection-shell">
-        <nav class="collection-tabs">
-          ${metadata.tabs.map((tab, index) => `
-            <button
-              type="button"
-              class="${index === 0 ? "active" : ""}"
-              data-tab-index="${index}"
-            >
-              ${tab.title}
-            </button>
-          `).join("")}
-        </nav>
-
-        <section class="window-body collection-body">
-          <h1>${firstTab.title}</h1>
-          <div class="author">${metadata.author || ""}</div>
-          <div class="collection-content">
-            ${firstContent}
-          </div>
-        </section>
-      </section>
-    `;
-
-    const body = win.querySelector(".collection-body");
-
-    win.querySelectorAll("[data-tab-index]").forEach((button) => {
-      button.addEventListener("click", async () => {
-        const tab = metadata.tabs[Number(button.dataset.tabIndex)];
-
-        win.querySelectorAll("[data-tab-index]").forEach((item) => {
-          item.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        const tabContent = await this.loadDocx(tab.docxPath);
-
-        body.innerHTML = `
-          <h1>${tab.title}</h1>
-          <div class="author">${metadata.author || ""}</div>
-          <div class="collection-content">
-            ${tabContent}
-          </div>
-        `;
+  if (fileNode.metadataPath) {
+    try {
+      const response = await fetch(fileNode.metadataPath, {
+        cache: "no-store",
       });
-    });
 
-    this.attachWindowControls(win);
-    this.layer.appendChild(win);
-  },
+      if (!response.ok) {
+        throw new Error(`Could not fetch metadata: ${response.status}`);
+      }
+
+      metadata = await response.json();
+    } catch (error) {
+      console.warn("Could not load collection metadata:", error);
+    }
+  }
+
+  if (metadata.themePath) {
+    this.loadTheme(metadata.themePath);
+  }
+
+  if (!metadata.tabs || !metadata.tabs.length) {
+    metadata.tabs = [
+      {
+        title: "Empty Collection",
+        docxPath: "",
+      },
+    ];
+  }
+
+  const firstTab = metadata.tabs[0];
+  const firstContent = await this.loadDocx(firstTab.docxPath);
+  const firstIllustration = await this.loadIllustration(firstTab.illustration);
+
+  const win = document.createElement("article");
+  win.className = "thdate-window collection-window";
+  win.dataset.collection = fileNode.collectionId || "";
+
+  win.innerHTML = `
+    <header class="window-bar">
+      <span>${metadata.title}</span>
+
+      <nav class="window-controls">
+        <button type="button" data-action="fullscreen">□</button>
+        <button type="button" data-action="close">✕</button>
+      </nav>
+    </header>
+
+    <section class="collection-shell">
+      <nav class="collection-tabs">
+        ${metadata.tabs.map((tab, index) => `
+          <button
+            type="button"
+            class="${index === 0 ? "active" : ""}"
+            data-tab-index="${index}"
+          >
+            ${tab.title}
+          </button>
+        `).join("")}
+      </nav>
+
+      <section class="window-body collection-body">
+        <h1>${firstTab.title}</h1>
+        <div class="author">${metadata.author || ""}</div>
+        <div class="collection-content">
+          ${firstIllustration}
+          ${firstContent}
+        </div>
+      </section>
+    </section>
+  `;
+
+  const body = win.querySelector(".collection-body");
+
+  win.querySelectorAll("[data-tab-index]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const tab = metadata.tabs[Number(button.dataset.tabIndex)];
+
+      win.querySelectorAll("[data-tab-index]").forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      const tabContent = await this.loadDocx(tab.docxPath);
+      const tabIllustration = await this.loadIllustration(tab.illustration);
+
+      body.innerHTML = `
+        <h1>${tab.title}</h1>
+        <div class="author">${metadata.author || ""}</div>
+        <div class="collection-content">
+          ${tabIllustration}
+          ${tabContent}
+        </div>
+      `;
+    });
+  });
+
+  this.attachWindowControls(win);
+  this.layer.appendChild(win);
+},
 
   attachWindowControls(win) {
     win.querySelector('[data-action="close"]').addEventListener("click", () => {

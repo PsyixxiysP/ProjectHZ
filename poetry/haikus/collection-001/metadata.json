@@ -8,27 +8,47 @@
     {
       "id": "an-atom-bomb-drops",
       "title": "An Atom Bomb Drops",
-      "docxPath": "poetry/haikus/collection-001/an-atom-bomb-drops.docx"
+      "docxPath": "poetry/haikus/collection-001/an-atom-bomb-drops.docx",
+      "illustration": {
+        "type": "ascii",
+        "path": "poetry/haikus/collection-001/an-atom-bomb-drops-ascii.txt"
+      }
     },
     {
       "id": "bang",
       "title": "BANG",
-      "docxPath": "poetry/haikus/collection-001/bang.docx"
+      "docxPath": "poetry/haikus/collection-001/bang.docx",
+      "illustration": {
+        "type": "ascii",
+        "path": "poetry/haikus/collection-001/bang-ascii.txt"
+      }
     },
     {
       "id": "dot-dot-dot",
       "title": "Dot Dot Dot",
-      "docxPath": "poetry/haikus/collection-001/dot-dot-dot.docx"
+      "docxPath": "poetry/haikus/collection-001/dot-dot-dot.docx",
+      "illustration": {
+        "type": "ascii",
+        "path": "poetry/haikus/collection-001/dot-dot-dot-ascii.txt"
+      }
     },
     {
       "id": "ramesses-ii",
       "title": "Ramesses II",
-      "docxPath": "poetry/haikus/collection-001/ramesses-ii.docx"
+      "docxPath": "poetry/haikus/collection-001/ramesses-ii.docx",
+      "illustration": {
+        "type": "ascii",
+        "path": "poetry/haikus/collection-001/ramesses-ii-ascii.txt"
+      }
     },
     {
       "id": "22-cheltenham-street",
       "title": "22 Cheltenham Street",
-      "docxPath": "poetry/haikus/collection-001/22-cheltenham-street.docx"
+      "docxPath": "poetry/haikus/collection-001/22-cheltenham-street.docx",
+      "illustration": {
+        "type": "ascii",
+        "path": "poetry/haikus/collection-001/22-cheltenham-street-ascii.txt"
+      }
     }
   ]
 }

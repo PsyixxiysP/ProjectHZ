@@ -1,63 +1,130 @@
-.collection-window[data-collection="haiku-collection-001"] {
-  background: #260708;
+/* ==========================================================
+   HAIKU COLLECTION 001
+   ========================================================== */
+
+.thdate-window[data-collection="haiku-collection-001"] {
+    background: #ece4d8;
 }
 
-.collection-shell {
-  height: calc(100% - 44px);
-  display: flex;
-  flex-direction: column;
-  background: #f4ecd8;
-  color: #1d1712;
+/* ===========================
+   TITLE BAR
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] .window-bar {
+    background: #8c2f39;
+
+    color: #f7f2e7;
+
+    border-bottom: 2px solid #5b4337;
 }
 
-.collection-tabs {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.15rem;
-  padding: 1rem 1.25rem 0;
-  background: #d8c49d;
-  border-bottom: 2px solid #8c7d6d;
-  overflow-x: auto;
+/* ===========================
+   WINDOW BUTTONS
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] .window-controls button {
+
+    background: #b6525e;
+
+    color: #fdf9f3;
+
+    border: 1px solid #d99aa2;
+
+    transition: .15s;
 }
 
-.collection-tabs button {
-  position: relative;
-  top: 2px;
-  padding: 0.65rem 1.1rem 0.55rem;
-  background: #d9bf86;
-  color: #2b2115;
-  border: 1px solid #8c6f3f;
-  border-bottom: 0;
-  border-radius: 0;
-  font: inherit;
-  cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  white-space: nowrap;
+.thdate-window[data-collection="haiku-collection-001"] .window-controls button:hover {
+
+    background: #cf6b76;
 }
 
-.collection-tabs button.active {
-  top: 0;
-  background: #f4ecd8;
-  z-index: 3;
-  padding-top: 0.85rem;
+/* ===========================
+   TABS
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] .collection-tabs {
+
+    background: #d9cfc1;
+
+    border-bottom: 1px solid #b9ab97;
 }
 
-.collection-tabs button:hover {
-  background: #f0d8a2;
+.thdate-window[data-collection="haiku-collection-001"] .collection-tabs button {
+
+    background: transparent;
+
+    color: #6b5144;
+
+    border: none;
+
+    padding: .65rem 1.1rem;
+
+    transition: .15s;
 }
 
-.collection-body {
-  flex: 1;
-  overflow: auto;
-  background: #f4ecd8;
-  color: #1d1712;
-  padding: clamp(2rem, 7vw, 5rem);
-  font-family: Georgia, serif;
-  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
-  line-height: 1.85;
+.thdate-window[data-collection="haiku-collection-001"] .collection-tabs button:hover {
+
+    background: rgba(140,47,57,.08);
 }
 
-.collection-content {
-  max-width: 680px;
-  margin: 0 auto;
+.thdate-window[data-collection="haiku-collection-001"] .collection-tabs button.active {
+
+    background: #8c2f39;
+
+    color: #fff8ee;
+}
+
+/* ===========================
+   DOCUMENT
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] .window-body {
+
+    background: #f5f0e5;
+
+    color: #2f241e;
+
+    font-family: Georgia, serif;
+}
+
+/* ===========================
+   TITLE
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] h1 {
+
+    color: #7a2630;
+
+    letter-spacing: .08em;
+}
+
+/* ===========================
+   AUTHOR
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] .author {
+
+    color: #90786b;
+
+    margin-bottom: 2.5rem;
+}
+
+/* ===========================
+   POEM
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] p {
+
+    line-height: 1.75;
+
+    margin-bottom: 2rem;
+}
+
+/* ===========================
+   ASCII
+   =========================== */
+
+.thdate-window[data-collection="haiku-collection-001"] .illustration pre {
+
+    color: #8c2f39;
 }
