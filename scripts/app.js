@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const skipHandler = (event) => {
     if (event.key !== "Enter") return;
 
+       event.preventDefault();
+       event.stopPropagation();
+
     introSkipped = true;
     finishIntro();
 
