@@ -1,0 +1,49 @@
+/**
+ * terminal.css
+ * Terminal output, prompt and clickable terminal links.
+ */
+
+.terminal {
+  width: calc(100vw - 420px);
+  max-width: 850px;
+  padding-right: 0;
+}
+
+.terminal-output {
+  white-space: pre-wrap;
+  line-height: 1.45;
+  min-height: 55vh;
+}
+
+.terminal-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  max-width: calc(100vw - 420px);
+}
+
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 255, 102, 0.35);
+  color: var(--green);
+  font: inherit;
+  outline: none;
+  caret-color: var(--green);
+}
+
+.terminal-link {
+  display: inline;
+  background: transparent;
+  border: 0;
+  color: var(--cyan);
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.terminal-link:hover {
+  background: var(--green);
+  color: var(--black);
+}

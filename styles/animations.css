@@ -1,0 +1,106 @@
+/**
+ * animations.css
+ * Effects that are shared between modules.
+ */
+
+@keyframes smallGlitch {
+  50% {
+    transform: translate(-3px, 2px);
+  }
+}
+
+body.page-glitch {
+  animation: pageGlitch 0.22s steps(2) 4;
+}
+
+@keyframes pageGlitch {
+  25% {
+    filter: invert(1) contrast(2);
+    transform: translate(6px, -3px);
+  }
+
+  50% {
+    filter: hue-rotate(120deg);
+    transform: translate(-5px, 4px);
+  }
+
+  75% {
+    filter: contrast(3);
+    transform: translate(3px, 2px);
+  }
+}
+
+.matrix-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 30;
+}
+
+#matrix-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.matrix-log {
+  position: fixed;
+  left: 3rem;
+  bottom: 3rem;
+  z-index: 40;
+  color: var(--green);
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.ascii-art {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  z-index: 40;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+  font-family: "Courier New", monospace;
+  font-size: clamp(0.7rem, 1.3vw, 1.1rem);
+  line-height: 1;
+  white-space: pre;
+  opacity: 0.7;
+  text-align: center;
+  pointer-events: none;
+}
+
+.continue-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: #000;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", monospace;
+}
+
+.continue-screen.hidden {
+  display: none;
+}
+
+.continue-inner {
+  text-align: center;
+}
+
+.continue-title {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2em;
+}
+
+.continue-title--spaced {
+  letter-spacing: 0.45em;
+  word-spacing: 1.2em;
+  white-space: pre-wrap;
+}
+
+.continue-prompt {
+  animation: blink 1.1s steps(2, start) infinite;
+}

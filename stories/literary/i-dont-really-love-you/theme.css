@@ -1,0 +1,9 @@
+.thdate-window[data-story="i-dont-really-love-you"] {
+  background: #260708;
+}
+
+.thdate-window[data-story="i-dont-really-love-you"] .window-body {
+  background: #f4ecd8;
+  color: #1d1712;
+  font-family: Georgia, serif;
+}

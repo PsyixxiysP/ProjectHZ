@@ -1,0 +1,72 @@
+/**
+ * windows.css
+ * THDATE document windows.
+ */
+
+.window-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.thdate-window {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(900px, 88vw);
+  height: min(86vh, 850px);
+  transform: translate(-50%, -50%);
+  background: var(--oxblood);
+  pointer-events: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
+}
+
+.window-bar {
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #efe6d2;
+  color: #1d0b0b;
+  border-bottom: 1px solid #8c7d6d;
+  padding: 0 1rem;
+  font-family: "Courier New", monospace;
+}
+
+.window-controls button {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  margin-left: 0.7rem;
+}
+
+.window-body {
+  height: calc(100% - 44px);
+  overflow: auto;
+  background: var(--paper);
+  color: #1d1712;
+  padding: clamp(2rem, 7vw, 5rem);
+  font-family: Georgia, serif;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.85;
+}
+
+.window-body h1 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 0.5rem;
+}
+
+.window-body .author {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 1rem;
+}
+
+.thdate-window.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}

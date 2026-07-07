@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THDATE</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/terminal.css" />
+  <link rel="stylesheet" href="styles/windows.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+  <section id="boot-screen" class="boot-screen">
+    <h1>GREETINGS<br>PEOPLE<br>OF EARTH</h1>
+    <div id="boot-countdown" class="boot-countdown">00:00:00:00</div>
+    <pre id="boot-log"></pre>
+  </section>
+
+  <section id="matrix-screen" class="matrix-screen hidden">
+  <canvas id="matrix-canvas"></canvas>
+  <pre id="matrix-log" class="matrix-log"></pre>
+  <pre id="ascii-art" class="ascii-art"></pre>
+</section>
+
+<section id="continue-screen" class="continue-screen hidden">
+  <div class="continue-inner">
+    <div class="continue-title">BOOT COMPLETE</div>
+    <div class="continue-title continue-title--spaced">GOD IS IN HIS HEAVEN / ALL IS RIGHT WITH THE WORLD</div>
+    <div class="continue-prompt">PRESS ANY BUTTON TO CONTINUE</div>
+  </div>
+</section>
+
+  <main id="desktop" class="desktop hidden">
+    <aside class="right-panel">
+      <div id="countdown" class="countdown">00:00:00:00</div>
+      <div id="countdown-caption" class="countdown-caption"></div>
+  
+      <section class="new-panel">
+        <h2>NEW</h2>
+        <button data-command="open i-dont-really-love-you">I DON'T REALLY LOVE YOU (Short Story)</button>
+        <button data-command="open collection-001">Collection 001 (Haiku Collection)</button>
+        <button data-command="open untitled3">Untitled 3</button>
+      </section>
+    </aside>
+
+    <section class="terminal">
+      <div id="terminal-output" class="terminal-output"></div>
+      <form id="terminal-form" class="terminal-form">
+        <span id="prompt">C:\THDATE&gt;</span>
+        <input id="terminal-input" autocomplete="off" spellcheck="false" />
+      </form>
+    </section>
+
+    <section id="window-layer" class="window-layer"></section>
+  </main>
+
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+  
+  <script src="scripts/config.js"></script>
+  <script src="scripts/filesystem.js"></script>
+  <script src="scripts/windowManager.js"></script>
+  <script src="scripts/countdown.js"></script>
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/terminal.js"></script>
+  <script src="scripts/commands.js"></script>
+  <script src="scripts/boot.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

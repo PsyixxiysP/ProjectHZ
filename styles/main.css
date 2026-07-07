@@ -1,0 +1,122 @@
+/**
+ * main.css
+ * Global layout and base colours.
+ */
+
+:root {
+  --green: #00ff66;
+  --red: #ff3355;
+  --cyan: #00ffff;
+  --black: #000000;
+  --paper: #f4ecd8;
+  --oxblood: #260708;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--green);
+  font-family: "Courier New", monospace;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.boot-screen {
+  min-height: 100vh;
+  padding: 4vw;
+}
+
+.boot-screen h1 {
+  font-size: clamp(3rem, 10vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  margin: 0;
+  animation: smallGlitch 0.3s infinite steps(2);
+}
+
+.boot-countdown {
+  color: var(--red);
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  margin-top: 2rem;
+}
+
+#boot-log {
+  margin-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.desktop {
+  min-height: 100vh;
+  padding: 3rem;
+}
+
+.right-panel {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 270px;
+  text-align: right;
+  z-index: 5;
+}
+
+.countdown {
+  color: var(--red);
+  font-size: clamp(1.2rem, 2.5vw, 2.3rem);
+  text-shadow: 0 0 8px var(--red);
+}
+
+.countdown-caption {
+  min-height: 2.6em;
+  margin-top: 0.3rem;
+  color: var(--red);
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.new-panel {
+  margin-top: 2rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(0, 255, 102, 0.4);
+  text-align: left;
+}
+
+.new-panel h2 {
+  color: var(--cyan);
+  letter-spacing: 0.4em;
+  font-size: 1rem;
+}
+
+.new-panel button {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 0;
+  background: transparent;
+  color: var(--green);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 255, 102, 0.25);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.new-panel button:hover {
+  background: var(--green);
+  color: var(--black);
+}
+
+@media (max-width: 850px) {
+  .right-panel {
+    position: static;
+    width: auto;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+}

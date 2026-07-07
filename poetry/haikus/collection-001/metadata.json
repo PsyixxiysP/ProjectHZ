@@ -1,0 +1,34 @@
+{
+  "title": "Collection 001",
+  "author": "Harrison Szell",
+  "type": "haiku collection",
+  "themePath": "poetry/haikus/collection-001/theme.css",
+
+  "tabs": [
+    {
+      "id": "an-atom-bomb-drops",
+      "title": "An Atom Bomb Drops",
+      "docxPath": "poetry/haikus/collection-001/an-atom-bomb-drops.docx"
+    },
+    {
+      "id": "bang",
+      "title": "BANG",
+      "docxPath": "poetry/haikus/collection-001/bang.docx"
+    },
+    {
+      "id": "dot-dot-dot",
+      "title": "Dot Dot Dot",
+      "docxPath": "poetry/haikus/collection-001/dot-dot-dot.docx"
+    },
+    {
+      "id": "ramesses-ii",
+      "title": "Ramesses II",
+      "docxPath": "poetry/haikus/collection-001/ramesses-ii.docx"
+    },
+    {
+      "id": "22-cheltenham-street",
+      "title": "22 Cheltenham Street",
+      "docxPath": "poetry/haikus/collection-001/22-cheltenham-street.docx"
+    }
+  ]
+}
