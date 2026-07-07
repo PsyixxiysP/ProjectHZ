@@ -139,14 +139,14 @@ const FileSystem = {
               gallery1: { type: "empty", title: "Gallery 1" },
               gallery2: { type: "empty", title: "Gallery 2" },
               gallery3: { type: "empty", title: "Gallery 3" },
-          youtube: { type: "empty", title: "YouTube" },
             }
           },
           instagram: {
             type: "external",
             title: "Instagram",
             url: "https://www.instagram.com/hszellt/"
-          }
+          },
+          youtube: { type: "empty", title: "YouTube" }
         }
       },
 
