@@ -49,3 +49,51 @@
     background: #641111;
     color: #F3E7DC;
 }
+
+.thdate-window[data-story="i-dont-really-love-you"] .window-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+/* spider web only in top-left corner of the bar */
+.thdate-window[data-story="i-dont-really-love-you"] .window-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 38%;
+    height: 100%;
+
+    background:
+        repeating-radial-gradient(
+            circle at 0% 0%,
+            transparent 0 10px,
+            rgba(161, 31, 31, .45) 10px 11px,
+            transparent 11px 22px
+        ),
+        repeating-conic-gradient(
+            from 25deg at 0% 0%,
+            transparent 0deg 13deg,
+            rgba(161, 31, 31, .38) 13deg 14deg,
+            transparent 14deg 27deg
+        );
+
+    opacity: .9;
+    pointer-events: none;
+    z-index: 0;
+
+    mask-image: linear-gradient(
+        to right,
+        black 0%,
+        black 55%,
+        transparent 100%
+    );
+}
+
+/* keep title and buttons above the web */
+.thdate-window[data-story="i-dont-really-love-you"] .window-bar > span,
+.thdate-window[data-story="i-dont-really-love-you"] .window-controls {
+    position: relative;
+    z-index: 1;
+}
