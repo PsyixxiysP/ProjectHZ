@@ -68,6 +68,7 @@ const Matrix = {
     const lines = [
       "INITIALISING THDATE...",
       "ANALYSING ALL RECORDED MEDIA ON THE INTERWEBS...",
+      "BOOTING TempleOS...",
       "INPUT READY.",
       "FICTION READY.",
       "VISUAL_MEDIA READY.",

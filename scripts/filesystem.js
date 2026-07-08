@@ -155,24 +155,38 @@ const FileSystem = {
   children: {
     "i-dont-really-love-you": {
       type: "document",
-      title: "I DON'T REALLY LOVE YOU (Short Story)",
+      title: "I DON'T REALLY LOVE YOU [Literary - Short Story]",
       author: "Harrison Szell",
       storyId: "i-dont-really-love-you",
       metadataPath: "stories/literary/i-dont-really-love-you/metadata.json"
     },
     "collection-001": {
      type: "collection",
-     title: "Collection 001 (Haiku Collection)",
+     title: "Collection 001 [Haiku Collection]",
      author: "Harrison Szell",
      collectionId: "haiku-collection-001",
      metadataPath: "poetry/haikus/collection-001/metadata.json"
 },
     "the-lion": {
       type: "document",
-  title: "The Lion (Freeform Poem)",
+  title: "The Lion [Freeform Poem]",
   author: "Harrison Szell",
   storyId: "the-lion",
   metadataPath: "poetry/freeform/the-lion/metadata.json"
+    },
+     "ophiocordyceps": {
+      type: "document",
+  title: "Ophiocordyceps [Sci-Fi -Short Story]",
+  author: "Harrison Szell",
+  storyId: "ophiocordyceps",
+  metadataPath: "stories/sci-fi/ophiocordyceps/metadata.json"
+    },
+    "and-then-he-died": {
+      type: "document",
+  title: "and-then-he-died.txt [Literary - Short Story]",
+  author: "Harrison Szell",
+  storyId: "and-then-he-died",
+  metadataPath: "stories/literary/and-then-he-died/metadata.json"
     }
   }
 },
@@ -198,7 +212,7 @@ const FileSystem = {
           },
 
           ascii_art: {
-            type: "empty",
+            type: "external",
             title: "ASCII Art Sources",
             url: "https://www.asciiart.eu/gallery"
           },

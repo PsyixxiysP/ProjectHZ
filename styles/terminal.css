@@ -42,9 +42,14 @@
   font: inherit;
   padding: 0;
   cursor: pointer;
+
+  hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .terminal-link:hover {
   background: var(--green);
   color: var(--black);
 }
+

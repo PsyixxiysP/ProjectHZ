@@ -1,0 +1,84 @@
+.thdate-window[data-story="and-then-he-died"] {
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        inset -1px -1px 0 #404040;
+}
+
+.thdate-window[data-story="and-then-he-died"] .window-bar {
+    background: #e6e6e6;
+    color: #000000;
+    border-bottom: 1px solid #808080;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.thdate-window[data-story="and-then-he-died"] .window-controls button {
+    background: #c0c0c0;
+    color: #000000;
+    border: 1px solid #808080;
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        inset -1px -1px 0 #404040;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+
+.thdate-window[data-story="and-then-he-died"] .window-controls button:nth-child(2):hover {
+    background: #d13438;
+    color: #ffffff;
+}
+
+
+.thdate-window[data-story="and-then-he-died"] .window-controls button:nth-child(1):hover {
+    background: #f0a020;
+    color: #000000;
+}
+
+.thdate-window[data-story="and-then-he-died"] .window-body {
+    background: #ffffff;
+    color: #000000;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.45;
+    padding: 1.5rem;
+}
+
+.thdate-window[data-story="and-then-he-died"] h1 {
+    color: #000000;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.thdate-window[data-story="and-then-he-died"] .author {
+    color: #000000;
+    font-family: Consolas, "Courier New", monospace;
+    margin-bottom: 2rem;
+}
+
+.thdate-window[data-story="and-then-he-died"] p {
+    color: #000000;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+}
+
+.thdate-window[data-story="and-then-he-died"] .illustration {
+    display: none;
+}
+
+.thdate-window[data-story="and-then-he-died"] ::selection {
+    background: #0a64ad;
+    color: #ffffff;
+}
+
+.thdate-window[data-story="and-then-he-died"] .window-title {
+    font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}

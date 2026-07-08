@@ -23,7 +23,7 @@ const THDATE_CONFIG = {
   ],
  
    /*
-   * BOOT
+   * BOOT -- currently defunct 
    */
   bootLines: [
     "INITIALISING THDATE...",
@@ -39,7 +39,7 @@ const THDATE_CONFIG = {
   ],
 
   /*
-   * MATRIX
+   * MATRIX -- currently defunct 
    */
 
   matrixExtraLines: [
