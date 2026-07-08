@@ -245,13 +245,26 @@ ${this.navButtons()}`);
 │   ├── long_form
 │   ├── poetry
 │   │   ├── freeform
+|   │   │   ├── tree-photography
+|   │   │   └── the-lion
 │   │   └── haikus
 │   │       └── collection-001
 │   └── anthologies_short_stories
-│       ├── fantasy
+│       ├── literary
+│       │   ├── i-dont-really-love-you
+│       │   ├── and-then-he-died
+│       │   ├── the-depressed-man
+│       │   └── girl-child-of-war
+│       │
 │       ├── sci-fi
-│       └── literary
-│           └── i-dont-really-love-you
+│       │   ├── rom-comm
+│       │   ├── the-cowardly-thing
+│       │   └── ophiocordyceps
+│       │
+│       └── fantasy
+│           ├── on-running-a-small-business
+│           ├── the-exact-details-of-history
+│           └── total-world-domination
 │
 ├── visual_media
 │   ├── youtube
