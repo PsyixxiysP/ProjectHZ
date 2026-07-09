@@ -187,7 +187,14 @@ const FileSystem = {
   author: "Harrison Szell",
   storyId: "and-then-he-died",
   metadataPath: "stories/literary/and-then-he-died/metadata.json"
-    }
+    },
+    "on-running-a-small-business": {
+      type: "document",
+  title: "On Running a Small Business [Fantasy - Short Story]",
+  author: "Harrison Szell",
+  storyId: "on-running-a-small-business",
+  metadataPath: "stories/fantasy/on-running-a-small-business/metadata.json"
+    },
   }
 },
 

@@ -98,6 +98,8 @@ const WindowManager = {
   const content = await this.loadDocx(metadata.docxPath);
   const illustration = await this.loadIllustration(metadata.illustration);
 
+  const useStoryPage = metadata.useStoryPage === true;
+
   if (metadata.themePath) {
     this.loadTheme(metadata.themePath);
   }
@@ -133,10 +135,12 @@ const WindowManager = {
                 <h1>${metadata.title}</h1>
                 <div class="author">${metadata.author || ""}</div>
 
-      ${illustration}
+                ${illustration}
 
-      ${content}
-    </section>
+                ${content}
+            `
+    }
+</section>
   `;
 
   this.attachWindowControls(win);
@@ -273,3 +277,4 @@ const WindowManager = {
     document.head.appendChild(link);
   },
 };
+
