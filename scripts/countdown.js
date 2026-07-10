@@ -94,3 +94,10 @@ const Countdown = {
     }, 120);
   }
 };
+const countdown = document.getElementById("countdown");
+
+countdown.style.cursor = "pointer";
+
+countdown.addEventListener("click", () => {
+    window.open("https://libraryoftime.xyz/", "_blank", "noopener,noreferrer");
+});
