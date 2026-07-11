@@ -6,6 +6,7 @@
  */
 
 let introSkipped = false;
+let introFinished = false;
 
 document.addEventListener("DOMContentLoaded", async () => {
   WindowManager.init();
@@ -16,8 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   const skipHandler = (event) => {
     if (event.key !== "Enter") return;
 
-       event.preventDefault();
-       event.stopPropagation();
+    event.preventDefault();
+    event.stopPropagation();
 
     introSkipped = true;
     finishIntro();
@@ -42,7 +43,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.removeEventListener("keydown", skipHandler);
 });
 
+/**
+ * Finishes the intro and displays the desktop.
+ * The guard prevents this from running more than once.
+ */
 function finishIntro() {
+  if (introFinished) return;
+
+  introFinished = true;
   introSkipped = true;
 
   const bootScreen = document.getElementById("boot-screen");
@@ -60,9 +68,13 @@ function finishIntro() {
   desktop.classList.remove("hidden");
 
   Commands.menu();
+  WindowManager.openFromUrl();
   Terminal.focus();
 }
 
+/**
+ * Shows the continue screen and waits for a keyboard or mouse input.
+ */
 function waitForAnyButton() {
   const continueScreen = document.getElementById("continue-screen");
 
@@ -83,17 +95,56 @@ function waitForAnyButton() {
   });
 }
 
+/**
+ * Renders items from the manually controlled "new" directory.
+ */
 function renderNewPanel() {
   const panel = document.getElementById("new-panel-items");
   if (!panel) return;
 
-  const newItems = FileSystem.tree.children.new.children;
+  const newDirectory = FileSystem.tree.children.new;
 
-  panel.innerHTML = Object.entries(newItems).map(([key, item]) => {
-    return `
-      <button data-command="open ${key}">
-        ${item.title || key}
-      </button>
-    `;
-  }).join("");
+  if (!newDirectory || !newDirectory.children) {
+    panel.innerHTML = "";
+    return;
+  }
+
+  const newItems = newDirectory.children;
+
+  panel.innerHTML = Object.entries(newItems)
+    .map(([key, item]) => {
+      return `
+        <button type="button" data-command="open ${key}">
+          ${item.title || key}
+        </button>
+      `;
+    })
+    .join("");
 }
+
+/**
+ * Handles browser Back and Forward navigation.
+ *
+ * When the URL changes:
+ * 1. Close the currently open windows.
+ * 2. Open the story or collection referenced by the URL hash.
+ *
+ * Example:
+ * #story=i-dont-really-love-you
+ * #collection=collection-001
+ */
+window.addEventListener("popstate", () => {
+  document
+    .querySelectorAll(".thdate-window")
+    .forEach((win) => win.remove());
+
+  WindowManager.openFromUrl();
+});
+
+window.addEventListener("hashchange", () => {
+  document
+    .querySelectorAll(".thdate-window")
+    .forEach((win) => win.remove());
+
+  WindowManager.openFromUrl();
+});

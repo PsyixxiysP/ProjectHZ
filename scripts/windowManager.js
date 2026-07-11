@@ -142,7 +142,13 @@ const WindowManager = {
     }
 </section>
   `;
-
+if (fileNode.storyId) {
+  history.pushState(
+    null,
+    "",
+    `#story=${encodeURIComponent(fileNode.storyId)}`
+  );
+}
   this.attachWindowControls(win);
   this.layer.appendChild(win);
 },
@@ -252,6 +258,14 @@ const WindowManager = {
     });
   });
 
+if (fileNode.collectionId) {
+  history.pushState(
+    null,
+    "",
+    `#collection=${encodeURIComponent(fileNode.collectionId)}`
+  );
+}
+  
   this.attachWindowControls(win);
   this.layer.appendChild(win);
 },
@@ -265,6 +279,54 @@ const WindowManager = {
       win.classList.toggle("fullscreen");
     });
   },
+
+findNodeById(node, targetId) {
+  if (!node || typeof node !== "object") return null;
+
+  if (
+    node.storyId === targetId ||
+    node.collectionId === targetId
+  ) {
+    return node;
+  }
+
+  if (node.children) {
+    for (const child of Object.values(node.children)) {
+      const match = this.findNodeById(child, targetId);
+
+      if (match) return match;
+    }
+  }
+
+  return null;
+},
+
+openFromUrl() {
+  const hash = window.location.hash;
+
+  if (!hash) return;
+
+  const match = hash.match(/^#(?:story|collection)=(.+)$/);
+
+  if (!match) return;
+
+  const id = decodeURIComponent(match[1]);
+  const fileNode = this.findNodeById(FileSystem.tree, id);
+
+  if (!fileNode) {
+    console.warn(`Could not find linked document: ${id}`);
+    return;
+  }
+
+  if (fileNode.type === "collection") {
+    this.openCollection(fileNode);
+    return;
+  }
+
+  if (fileNode.type === "document") {
+    this.openDocument(fileNode);
+  }
+},
 
   loadTheme(themePath) {
     const existing = document.querySelector(`link[href="${themePath}"]`);
