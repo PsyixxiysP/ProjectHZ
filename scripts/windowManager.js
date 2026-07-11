@@ -146,7 +146,7 @@ if (fileNode.storyId) {
   history.pushState(
     null,
     "",
-    `#story=${encodeURIComponent(fileNode.storyId)}`
+    `?story=${encodeURIComponent(fileNode.storyId)}`
   );
 }
   this.attachWindowControls(win);
@@ -262,7 +262,7 @@ if (fileNode.collectionId) {
   history.pushState(
     null,
     "",
-    `#collection=${encodeURIComponent(fileNode.collectionId)}`
+    `?collection=${encodeURIComponent(fileNode.collectionId)}`
   );
 }
   
@@ -302,15 +302,30 @@ findNodeById(node, targetId) {
 },
 
 openFromUrl() {
-  const hash = window.location.hash;
+  const params = new URLSearchParams(window.location.search);
 
-  if (!hash) return;
+  let type = "";
+  let id = "";
 
-  const match = hash.match(/^#(?:story|collection)=(.+)$/);
+  if (params.has("story")) {
+    type = "story";
+    id = params.get("story");
+  } else if (params.has("collection")) {
+    type = "collection";
+    id = params.get("collection");
+  } else {
+    const hashMatch = window.location.hash.match(
+      /^#(story|collection)=(.+)$/
+    );
 
-  if (!match) return;
+    if (hashMatch) {
+      type = hashMatch[1];
+      id = decodeURIComponent(hashMatch[2]);
+    }
+  }
 
-  const id = decodeURIComponent(match[1]);
+  if (!id) return;
+
   const fileNode = this.findNodeById(FileSystem.tree, id);
 
   if (!fileNode) {
@@ -318,12 +333,12 @@ openFromUrl() {
     return;
   }
 
-  if (fileNode.type === "collection") {
+  if (type === "collection" && fileNode.type === "collection") {
     this.openCollection(fileNode);
     return;
   }
 
-  if (fileNode.type === "document") {
+  if (type === "story" && fileNode.type === "document") {
     this.openDocument(fileNode);
   }
 },
