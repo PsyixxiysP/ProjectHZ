@@ -161,13 +161,13 @@ const FileSystem = {
   type: "directory",
   children: {
    "flotsam-and-jetsam": {
-  type: "collection",
+  type: "collectionddd",
   title: "Flotsam & Jetsam [Collection 002]",
   collectionId: "flotsam-and-jetsam",
   metadataPath: "poetry/freeform/flotsam-and-jetsam/metadata.json"
 },
     "i-dont-really-love-you": {
-      type: "document",
+      type: "documentdd",
       title: "I DON'T REALLY LOVE YOU [Literary - Short Story]",
       author: "Harrison Szell",
       storyId: "i-dont-really-love-you",

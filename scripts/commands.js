@@ -106,7 +106,7 @@ if (node.type === "empty") {
       Terminal.print(`
 ${FileSystem.getPrompt()}
 
-Harrison Szell writes things. He also takes photos. This is a website. His website. There is no reason to panic.
+Harrison Szell writes things. He also takes photos. This is a website. His website. Be Not Afraid.
 
 COMMANDS:
   <button class="terminal-link" data-command="back">back</button>
