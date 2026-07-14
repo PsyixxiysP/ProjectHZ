@@ -188,7 +188,7 @@ const FileSystem = {
   metadataPath: "poetry/freeform/the-lion/metadata.json"
     },
      "ophiocordyceps": {
-      type: "document",
+      type: "documentdd",
   title: "Ophiocordyceps [Sci-Fi -Short Story]",
   author: "Harrison Szell",
   storyId: "ophiocordyceps",
