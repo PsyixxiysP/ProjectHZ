@@ -6,9 +6,18 @@
   "themePath": "poetry/freeform/flotsam-and-jetsam/theme.css",
   "tabs": [
     {
-      "title": "Before We Begin",
-      "docxPath": "poetry/freeform/flotsam-and-jetsam/before-we-begin.docx"
+      "title": "FLOATSAM & JETSAM",
+      "docxPath": "poetry/freeform/flotsam-and-jetsam/title.docx",
+      "illustration": {
+        "type": "ascii",
+        "path": "poetry/freeform/flotsam-and-jetsam/ascii.txt"
+                        }
     },
+    {
+      "title": "PREFACE",
+      "docxPath": "poetry/freeform/flotsam-and-jetsam/PREFACE.docx"
+    },
+
     {
       "title": "A Sunburnt Nose",
       "docxPath": "poetry/freeform/flotsam-and-jetsam/a-sunburnt-nose.docx"
@@ -33,10 +42,13 @@
       "title": "The Art Wants What It Wants",
       "docxPath": "poetry/freeform/flotsam-and-jetsam/the-art-wants-what-it-wants.docx"
     },
-    
     {
       "title": "The World Goes on Turning",
       "docxPath": "poetry/freeform/flotsam-and-jetsam/the-world-goes-on-turning.docx"
+    },
+   {
+      "title": "Theseus and his ship",
+      "docxPath": "poetry/freeform/flotsam-and-jetsam/theseus-and-his-ship.docx"
     },
      {
       "title": "Fitting Together",

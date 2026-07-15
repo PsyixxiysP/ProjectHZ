@@ -130,3 +130,19 @@
 
     color: #8c2f39;
 }
+.collection-content pre {
+    color: #f5f3ee;
+
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+
+    text-shadow:
+        1px 1px 0 rgba(0,0,0,.45);
+}
+.collection-content pre {
+    margin: 2rem auto;
+    width: fit-content;
+}

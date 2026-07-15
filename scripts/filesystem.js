@@ -160,6 +160,13 @@ const FileSystem = {
       new: {
   type: "directory",
   children: {
+    "flotsam-and-jetsam": {
+      type: "collection",
+      title: "Flotsam & Jetsam [Poetry Collection 002]",
+      author: "Harrison Szell",
+      collectionId: "flotsam-and-jetsam",
+      metadataPath: "poetry/freeform/flotsam-and-jetsam/metadata.json"
+    },
     "i-dont-really-love-you": {
       type: "document",
       title: "I DON'T REALLY LOVE YOU [Literary - Short Story]",
